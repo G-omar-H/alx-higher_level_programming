@@ -13,15 +13,15 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *pos = NULL, *current = NULL, *previous = NULL;
 
+	if (!head)
+        {
+                free(pos);
+                return (NULL);
+        }
 	pos = malloc(sizeof(listint_t));
 	pos->n = number;
 	pos->next = NULL;
 
-	if (!head)
-	{
-		free(pos);
-		return (NULL);
-	}
 	current = *head;
 	previous = *head;
 	if (number < current->n)
@@ -45,9 +45,10 @@ listint_t *insert_node(listint_t **head, int number)
 			previous = previous->next;
 		}
 	}
-	else
+	else if (!current && previous->n < number)
 	{
 		previous->next = pos;
+		pos->next = NULL;
 		return (pos);
 	}
 	free(pos);
