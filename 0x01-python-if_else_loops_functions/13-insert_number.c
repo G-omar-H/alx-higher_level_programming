@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+listint_t *insert_node(listint_t **head, int number);
 /**
  * insert_node - insert a node at a sorted position
  * @head: pointer to the first node
@@ -10,21 +11,29 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *pos = NULL, *current = *head, *previous = *head;
+	listint_t *pos = NULL, *current = NULL, *previous = NULL;
 
 	pos = malloc(sizeof(listint_t));
 	pos->n = number;
 	pos->next = NULL;
 
-	if (current && number < current->n)
+	if (!head)
 	{
+		free(pos);
+		return (NULL);
+	}
+	current = *head;
+	previous = *head;
+	if (number < current->n)
+	{
+
 		pos->next = *head;
 		*head = pos;
 		return (pos);
 	}
 	else if (current->next)
 	{
-		while (current && current->next)
+		while (current)
 		{
 			current = current->next;
 			if (current->n > number)
@@ -35,6 +44,11 @@ listint_t *insert_node(listint_t **head, int number)
 			}
 			previous = previous->next;
 		}
+	}
+	else
+	{
+		previous->next = pos;
+		return (pos);
 	}
 	free(pos);
 	return (NULL);
