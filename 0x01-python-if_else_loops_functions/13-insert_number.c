@@ -43,7 +43,7 @@ listint_t *insert_node(listint_t **head, int number)
 				previous = previous->next;
 		}
 	}
-	else if (!current && previous->n < number)
+	else if (previous->n < number)
 	{
 		previous->next = pos;
 		pos->next = NULL;
