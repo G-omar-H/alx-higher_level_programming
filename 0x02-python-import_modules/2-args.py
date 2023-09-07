@@ -8,5 +8,5 @@ if __name__ == "__main__":
         j = 1
         print("{} arguments:".format(i))
         while j <= i:
-            print("{} {}".format(j, argv[j]))
+            print("{}: {}".format(j, argv[j]))
             j += 1
