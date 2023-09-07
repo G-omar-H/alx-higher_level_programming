@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import __pycache__/hydden_4.cpython-38.pyc
-    dir()
+    import hidden_4
+    for name in hidden_4:
+        if name[0:2] != "__":
+            print(name)
