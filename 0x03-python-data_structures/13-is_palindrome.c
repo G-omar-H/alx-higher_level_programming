@@ -1,35 +1,29 @@
 #include "lists.h"
 /**
+ * aux_palind - check for match
+ * @head: pointer to the first node
+ * @end: pointer to the last node
+ * Return: 1 if match , 0 (fails)
+ */
+int aux_palind(listint_t **head, listint_t *end)
+{
+	if (end == NULL)
+		return (1);
+	if (aux_palind(head, end->next) && (*head)->n == end->n)
+	{
+		*head = (*head)->next;
+		return (1);
+	}
+	return (0);
+}
+/**
  * is_palindrome - check if a linked list is a palindrome
  * @head: pointer to a pointer pointing to the first node
  * Return: 1 if palindrome, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
-	int i = 0, j = 1;
-	listint_t *current = *head, *previous = *head;
-
-	while (current)
-	{
-		current = current->next;
-		i++;
-	}
-	if (i)
-	{
-		while (previous->next != NULL)
-		{
-			current = *head;
-			for (j = 1; j < i; j++)
-			{
-				current = current->next;
-			}
-			if (previous->n != current->n)
-				return (0);
-			previous = previous->next;
-			if (i == i / 2)
-				break;
-			i--;
-		}
-	}
-	return (1);
+	if (head == NULL || *head == NULL)
+		return (1);
+	return (aux_palind(head, *head));
 }
