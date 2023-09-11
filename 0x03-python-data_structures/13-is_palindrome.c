@@ -26,6 +26,8 @@ int is_palindrome(listint_t **head)
 			if (previous->n != current->n)
 				return (0);
 			previous = previous->next;
+			if (i == i / 2)
+				break;
 			i--;
 		}
 	}
