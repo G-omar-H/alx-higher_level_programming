@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
     num = 0
-    if type(roman_string) != str or roman_string == None:
+    if type(roman_string) != str or roman_string is None:
         return 0
     for i in range(len(roman_string)):
         if roman_string[i] == 'I':
