@@ -2,5 +2,6 @@
 class Square:
     """"square class
     that creat an empty square
-    alx"""
+    alx
+    """
     pass
