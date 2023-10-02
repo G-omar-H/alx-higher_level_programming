@@ -54,11 +54,3 @@ class Rectangle:
             if x < self.__height - 1:
                 print()
         return ""
-
-    def print(self):
-        for x in range(self.__height):
-            for z in range(self.__width):
-                print('#', end="")
-            if x < self.__height - 1:
-                print()
-        return ""
