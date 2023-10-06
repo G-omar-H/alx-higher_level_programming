@@ -14,9 +14,11 @@ that value is equivalent to using the ``+`` operator.
 ::
 
     >>> add_integer = __import__('0-add_integer').add_integer
+
+::
+
     >>> add_integer(1, 2)
     3
-
 
 ::
 
@@ -106,3 +108,10 @@ that value is equivalent to using the ``+`` operator.
     >>> add_integer(5, 2, 8)
     Traceback (most recent call last):
     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+::
+
+    >>> add_integer(0)
+    98
+
+::
