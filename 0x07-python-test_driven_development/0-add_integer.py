@@ -12,10 +12,9 @@ def add_integer(a, b=98):
         :param b: bbbbb
         :type b: bbbb
     """
-    if type(a) is not in (int , float):
+    if type(a) not in (int, float):
         raise TypeError("a must be an integer")
 
-    if type(b) is not in (int, float):
+    if type(b) not in (int, float):
         raise TypeError("b must be an integer")
-
     return int(a) + int(b)
