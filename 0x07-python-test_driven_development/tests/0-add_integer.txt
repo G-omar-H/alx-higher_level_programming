@@ -115,3 +115,13 @@ that value is equivalent to using the ``+`` operator.
     98
 
 ::
+
+    >>> add_integer(123.9)
+    221
+
+::
+
+    >>> add_integer(999999, 9999995)
+    10999994
+
+::
