@@ -1,0 +1,195 @@
+===============================
+ How to Use doctest_in_help.py
+===============================
+
+This library is very simple, since it only has one function called
+``matrix_ditext_indentationvided()``.
+
+Numbers
+=======
+
+``text_indentation()`` returns the product of its arguments.  For numbers,
+
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+::
+
+    >>> text_indentation("Hello: ok.soooo. even if? or?not")
+    Hello:
+    <BLANKLINE>
+    ok.
+    <BLANKLINE>
+    soooo.
+    <BLANKLINE>
+    even if?
+    <BLANKLINE>
+    or?
+    <BLANKLINE>
+    not
+
+::
+
+    >>> text_indentation("     Hello: ok.soooo. even if? or?not")
+    Hello:
+    <BLANKLINE>
+    ok.
+    <BLANKLINE>
+    soooo.
+    <BLANKLINE>
+    even if?
+    <BLANKLINE>
+    or?
+    <BLANKLINE>
+    not
+
+::
+
+    >>> text_indentation("Hello:ok.soooo.even if?or?not")
+    Hello:
+    <BLANKLINE>
+    ok.
+    <BLANKLINE>
+    soooo.
+    <BLANKLINE>
+    even if?
+    <BLANKLINE>
+    or?
+    <BLANKLINE>
+    not
+
+::
+
+    >>> text_indentation("Hello: ok. soooo. even if? or? not")
+    Hello:
+    <BLANKLINE>
+    ok.
+    <BLANKLINE>
+    soooo.
+    <BLANKLINE>
+    even if?
+    <BLANKLINE>
+    or?
+    <BLANKLINE>
+    not
+
+::
+
+    >>> text_indentation("Hello:      ok.     soooo. even if? or? not")
+    Hello:
+    <BLANKLINE>
+    ok.
+    <BLANKLINE>
+    soooo.
+    <BLANKLINE>
+    even if?
+    <BLANKLINE>
+    or?
+    <BLANKLINE>
+    not
+
+::
+
+    >>> text_indentation("Hellooksooooeveifornot")
+    Hellooksooooeveifornot
+
+::
+
+    >>> text_indentation("     Hellooksooooeveifornot")
+    Hellooksooooeveifornot
+
+::
+
+    >>> text_indentation("Hellooksooooeveifornot      ")
+    Hellooksooooeveifornot
+
+::
+
+    >>> text_indentation("      Hellooksooooeveifornot    ")
+    Hellooksooooeveifornot
+
+::
+
+    >>> text_indentation(":.??")
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("   : .      ??  ")
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation(":")
+    :
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("Hello:")
+    Hello:
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation("Hello: ?")
+    Hello:
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+::
+
+    >>> text_indentation(".soooo")
+    .
+    <BLANKLINE>
+    soooo
+
+::
+
+    >>> text_indentation("")
+
+
+::
+
+    >>> text_indentation(2)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+::
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+::
+
+    >>> text_indentation("aaa:", 5)
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+::
+
+    >>> text_indentation("    ")
+
+::
