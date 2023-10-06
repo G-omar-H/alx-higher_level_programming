@@ -1,0 +1,72 @@
+===============================
+ How to use doctest_in_help.py
+===============================
+This library is very simple since is used on only one function:
+``say_my_name``.
+
+Numbers
+=======
+
+``say_my_name`` function that prints first name and last name from imput.
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+::
+
+    >>> say_my_name('Omar', 'Ghazi')
+    My name is Omar Ghazi
+ 
+::
+
+    >>> say_my_name('Omar')
+    My name is Omar 
+
+::
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+::
+
+    >>> say_my_name(2, 2)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("JOhn", 333)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+::
+
+    >>> say_my_name(111, 13)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("A", "B", "C")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+::
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("Omar", "")
+    My name is Omar 
+
+::
+
+    >>> say_my_name("")
+    My name is  
+
+::
