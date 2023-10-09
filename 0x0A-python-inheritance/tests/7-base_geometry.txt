@@ -49,7 +49,9 @@ Checking for integer < 0;
 
 Checking for non-integer types:
 	  >>> b.integer_validator("bool", True)
-
+	  Traceback (most recent call last):
+          ...
+          TypeError: bool must be an integer
 	  >>> b.integer_validator("float", 1.5)
           Traceback (most recent call last):
           ...
@@ -108,4 +110,5 @@ Checking for too many arguments:
 	  Traceback (most recent call last):
           ...
 	  TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 4 were given
+
 
