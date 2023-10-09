@@ -39,11 +39,19 @@ Or a single argument, which must be an iterable object.
     TypeError: 'NoneType' object is not iterable
 
 
+A ``TypeError`` will be raised for any more than one instantiation arguments.
+
 ::
 
     >>> my_list = MyList([1, 2], [3, 4])
     Traceback (most recent call last):
     TypeError: list expected at most 1 argument, got 2
+
+Usage
+=====
+
+``MyList`` is an inherited ``list`` class, and thus features the same methods.
+For instance, elements can be added to a ``MyList`` with the ``append()`` method.
 
 ::
 
@@ -70,11 +78,22 @@ And removed with the ``remove()`` method.
     >>> print(my_list)
     [2, 3]
 
+See the documentation on Python lists for more built-in methods.
+
+``print_sorted`` Method
+=======================
+
+``MyList`` implements a single method - a public instance method
+``print_sorted(self)``.
+
 ::
 
     >>> my_list = MyList()
     >>> print(my_list.print_sorted)
     <bound method MyList.print_sorted of []>
+
+The method takes no arguments - a TypeError will be raised if an argument is
+provided.
 
 ::
 
