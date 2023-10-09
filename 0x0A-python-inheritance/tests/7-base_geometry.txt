@@ -1,3 +1,17 @@
+# 7-base_geometry.txt
+
+=============================
+How to Use 7-base_geometry.py
+=============================
+
+This module defines a class ``BaseGeometry``.
+
+Instantiation
+=============
+
+``BaseGeometry`` can be instantiated with no arguments, which will return
+an empty list:
+
 Importing the function from the module:
 ::        
 
@@ -128,7 +142,8 @@ Checking for non-integer types:
           TypeError: frozenset must be an integer
 
 ::
-	  >>> b.integer_validator("bytes", b"bytes")
+
+          >>> b.integer_validator("bytes", b"bytes")
           Traceback (most recent call last):
           ...
           TypeError: bytes must be an integer
