@@ -15,6 +15,9 @@ Checking for method docstring:
 	  >>> mod1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
 	  >>> len(mod1) > 1
 	  True
+	  >>> mod2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+          >>> len(mod2) > 1
+          True
 
 Checking for area failure:
 	  >>> b = BG()
@@ -45,6 +48,8 @@ Checking for integer < 0;
           ValueError: integer must be greater than 0
 
 Checking for non-integer types:
+	  >>> b.integer_validator("bool", True)
+
 	  >>> b.integer_validator("float", 1.5)
           Traceback (most recent call last):
           ...
