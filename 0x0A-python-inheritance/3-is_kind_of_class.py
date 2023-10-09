@@ -1,5 +1,5 @@
 #!usr/bin/python3
-"""Class inheritance"""
+"""Class inheritance class-chacking function"""
 
 
 def is_kind_of_class(obj, a_class):
