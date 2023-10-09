@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-"""
-ALX inheritance project
-"""
+"""Defines a base geometry class BaseGeometry."""
 
 
 class BaseGeometry:
-    """
-    BaseGeometry first prototypes class creationg
-    """
+    """Reprsent base geometry."""
 
     def area(self):
-        """"function that raise an exceprion error message"""
+        """Not yet implemented."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
@@ -23,7 +19,7 @@ class BaseGeometry:
             TypeError: If value is not an integer.
             ValueError: If value is <= 0.
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        elif value <= 0:
+        if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
