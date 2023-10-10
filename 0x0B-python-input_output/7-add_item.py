@@ -13,7 +13,8 @@ if __name__ == "__main__":
         @filename: absolute or relative path to the file
         Return: None
     """
-    load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
+    load_from_json_file = \
+        __import__("6-load_from_json_file").load_from_json_file
     """
     function that creates an object from a json file
     args:
