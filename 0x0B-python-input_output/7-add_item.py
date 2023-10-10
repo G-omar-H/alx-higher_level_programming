@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-ALX file I/O learning project
-"""
+"""ALX file I/O learning project or python programming language"""
 import sys
 
 if __name__ == "__main__":
