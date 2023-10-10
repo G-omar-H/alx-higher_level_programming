@@ -12,5 +12,4 @@ def read_file(filename=""):
         Return: void
     """
     with open(filename, "r", encoding="UTF8") as fd:
-        for line in fd:
-            print(line)
+        print(fd.read())
