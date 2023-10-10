@@ -21,12 +21,18 @@ Return: object decoded from json file
 import sys
 
 """
- list of strings representing the arguments (as separated by spaces) on the command-line. 
+The sys module in Python provides various functions and variables 
+that are used to manipulate different parts of the Python runtime environment. 
+It allows operating on the interpreter 
+as it provides access to the variables and functions 
+that interact strongly with the interpreter
 """
 import json
 
 """
 json serialization module
+lightweight data interchange format inspired by JavaScript object literal syntax (
+    although it is not a strict subset of JavaScript 1 ).
 """
 
 my_list = []
