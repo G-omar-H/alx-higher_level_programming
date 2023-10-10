@@ -19,7 +19,15 @@ args:
 Return: object decoded from json file
     """
 import sys
+
+"""
+ list of strings representing the arguments (as separated by spaces) on the command-line. 
+"""
 import json
+
+"""
+json serialization module
+"""
 
 my_list = []
 try:
