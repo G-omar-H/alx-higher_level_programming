@@ -1,15 +1,7 @@
-#!usr/bin/python3
-"""
-ALX file I/O learning project
-"""
+#!/usr/bin/python3
+"""Defines a Python class-to-JSON function."""
 
 
 def class_to_json(obj):
-    """
-    function serialize disctionary description
-    with simple data structure for JSOn of an object
-    args:
-        @obj: object instance of a class
-    Return dictionary format for a JSOn serialization object
-    """
+    """Return the dictionary represntation of a simple data structure."""
     return obj.__dict__
