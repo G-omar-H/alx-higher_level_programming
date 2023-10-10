@@ -4,7 +4,20 @@ ALX file I/O learning project
 """
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+"""
+function that writes the Json representation of an object  into a file
+args:
+    @my_obj: object to serialize as Json
+    @filename: absolute or relative path to the file
+    Return: None
+"""
 load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
+"""
+function that creates an object from a json file
+args:
+    @filename: absolute or relative path string to a file
+Return: object decoded from json file
+    """
 import sys
 import json
 
