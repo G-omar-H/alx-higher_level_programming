@@ -61,9 +61,9 @@ class Base:
         """
         if dictionary and dictionary is not {}:
             if cls.__name__ == "Rectangle":
-                dummy = cls(1, 3, 4)
+                dummy = cls(1, 3)
             else:
-                dummy = cls(1, 2)
+                dummy = cls(1)
             dummy.update(**dictionary)
             return dummy
 
