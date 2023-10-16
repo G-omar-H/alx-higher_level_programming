@@ -13,7 +13,7 @@ class Base:
     def __init__(self, id=None):
         self.id = id
         Base.__nb_objects += 1
-        if id == None:
+        if id is None:
             self.id = Base.__nb_objects
 
     @staticmethod
@@ -21,10 +21,10 @@ class Base:
         """
         returns a json representation of list_disctionary
         """
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -33,10 +33,10 @@ class Base:
             @list-objs: list of object to serialize by json to a file
             @cls: class to represente
         """
-        
+
         path = "{}.json".format(cls.__name__)
-        with open(path, 'w', encoding="UTF8") as fd:
-            if list_objs == None:
+        with open(path, "w", encoding="UTF8") as fd:
+            if list_objs is None:
                 fd.write("[]")
             else:
                 obj_list = [ins.to_dictionary() for ins in list_objs]
@@ -47,7 +47,7 @@ class Base:
         """
         returns the list rom the json representation
         """
-        if json_string == None:
+        if json_string is None:
             return []
         return json.loads(json_string)
 
@@ -77,7 +77,3 @@ class Base:
                 return [cls.create(**d) for d in obj_list]
         except IOError:
             return []
-
-
-            
-
