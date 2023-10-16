@@ -60,7 +60,10 @@ class Base:
             disctionary: key worded list eith attributes and values
         """
         if dictionary and dictionary is not {}:
-            dummy = cls(1, 3, 4)
+            if cls.__name__ == "Rectangle":
+                dummy = cls(1, 3, 4)
+            else:
+                dummy = cls(1, 2)
             dummy.update(**dictionary)
             return dummy
 
