@@ -59,9 +59,10 @@ class Base:
             cls: class type creat
             disctionary: key worded list eith attributes and values
         """
-        dummy = cls(1, 3, 4)
-        dummy.update(**dictionary)
-        return dummy
+        if dictionary and dictionary is not {}:
+            dummy = cls(1, 3, 4)
+            dummy.update(**dictionary)
+            return dummy
 
     @classmethod
     def load_from_file(cls):
