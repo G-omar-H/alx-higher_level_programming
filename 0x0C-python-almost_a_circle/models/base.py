@@ -95,13 +95,14 @@ class Base:
         with open(path, "w", newline="") as csvfile:
             if list_objs is None:
                 csvfile.write("[]")
-            if cls.__name__ == "Rectangle":
-                fieldnames = ["id", "width", "height", "x", "y"]
             else:
-                fieldnames = ["id", "size", "x", "y"]
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            for ins in list_objs:
-                writer.writerow(ins.to_dictionary())
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for ins in list_objs:
+                    writer.writerow(ins.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
