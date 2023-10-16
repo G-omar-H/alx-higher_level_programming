@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Almost cycle Alx learnirng project"""
 import json
+import csv
 
 
 class Base:
@@ -79,5 +80,46 @@ class Base:
             with open(path, "r", encoding="UTF8") as fd:
                 obj_list = Base.from_json_string(fd.read())
                 return [cls.create(**d) for d in obj_list]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        write class attributed into CSV format inside a csv file
+        @args:
+            cls: class to convert
+            list_object: list of objcect attributes to convert into CVS format
+        """
+        path = "{}.csv".format(csv.__name__)
+        with open(path, "w", newline="") as csvfile:
+            if list_objs is None:
+                csvfile.write("[]")
+            if cls.__name__ == "Rectangle":
+                fieldnames = ["id", "width", "height", "x", "y"]
+            else:
+                fieldnames = ["id", "size", "x", "y"]
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            for ins in list_objs:
+                writer.writerow(ins.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        load from a csv file a deserialazed data from csv format
+        @args:
+            cls: class to initiate instances from
+        """
+        path = "{}.csv".format(csv.__name__)
+        try:
+            with open(path, "r", newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dict = csv.DictReader(csvfile, fieldnames=fieldnames)
+                list_dict = [dict([k, int(v)] for k, v in d.items())
+                             for d in list_dict]
+                return (cls.create(**d) for d in list_dict)
         except IOError:
             return []
