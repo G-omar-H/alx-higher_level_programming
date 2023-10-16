@@ -93,7 +93,7 @@ class Base:
         """
         path = "{}.csv".format(csv.__name__)
         with open(path, "w", newline="") as csvfile:
-            if list_objs is None:
+            if list_objs is None or list_objs == "[]":
                 csvfile.write("[]")
             else:
                 if cls.__name__ == "Rectangle":
