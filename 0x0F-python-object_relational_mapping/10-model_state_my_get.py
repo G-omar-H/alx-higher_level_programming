@@ -15,6 +15,6 @@ if __name__ == "__main__":
     state_id = session.query(State.id).\
         filter(State.name == sys.argv[4]).all()
     if state_id == []:
-        print("Nothing")
+        print("Not found")
     else:
         [print(id.id) for id in state_id]
