@@ -13,4 +13,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     rows = session.query(State.id, State.name).order_by(State.id).first()
+    if rows is None:
+        print("Nothing")
     print("{}: {}".format(rows[0], rows[1]))
