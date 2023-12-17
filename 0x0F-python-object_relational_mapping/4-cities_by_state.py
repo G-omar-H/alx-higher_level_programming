@@ -8,7 +8,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("""SELECT c.id, c.name, s.name FROM cities c
                 JOIN states s
-                ON c.id = s.id
+                ON c.state_id = s.id
                 ORDER BY c.id ASC""")
     [print(row) for row in cur.fetchall()]
     cur.close()
