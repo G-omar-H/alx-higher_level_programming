@@ -4,9 +4,9 @@ if (process.argv[2] === undefined || isNaN(process.argv[2])) {
 } else {
   const x = parseInt(process.argv[2]);
   let y = parseInt(process.argv[2]);
-  while (y) {
+  while (y > 0) {
     let z = x;
-    while (z) {
+    while (z > 0) {
       process.stdout.write('X');
       z--;
     }
