@@ -3,8 +3,8 @@
 Python script that takes in a URL, sends a request to the URL and displays
 """
 import urllib.request
-import urllib.error
 import sys
+
 
 url = sys.argv[1]
 
