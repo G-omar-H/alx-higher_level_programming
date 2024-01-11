@@ -12,7 +12,8 @@ if __name__ == "__main__":
         q = ""
 
     try:
-        response = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
+        response = requests.post("http://0.0.0.0:5000/search_user",
+                                 data={"q": q})
         json_data = response.json()
 
         if json_data:
