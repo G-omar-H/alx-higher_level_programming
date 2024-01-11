@@ -10,11 +10,9 @@ if __name__ == "__main__":
     password = sys.argv[2]
 
     url = "https://api.github.com/user"
-    response = requests.get(url, auth=(username, password))
-
-    if response.status_code == 200:
-        user_data = response.json()
-        user_id = user_data["id"]
-        print(f"Your GitHub id is: {user_id}")
-    else:
-        print("Failed to retrieve GitHub id")
+    headers = {'Authorization': f'Bearer {password}'}
+    res = requests.get("https://api.github.com/user", headers=headers)
+    if (res.status_code >= 400):
+        print("None")
+        exit()
+    print(res.json()["id"])
