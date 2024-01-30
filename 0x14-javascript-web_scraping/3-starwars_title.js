@@ -4,13 +4,16 @@
  * where episode number match given integer as argument
  */
 
-async function get () {
-  const id = Number(process.argv[2]);
-  const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
-  const req = new Request(url);
-  const res = await fetch(req);
-  const sw = await res.json();
+const req = require('request');
 
-  console.log(sw.title);
-}
-get();
+const id = process.argv[2];
+
+const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
+
+req(url, function (error, respond, body) {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  console.log(JSON.parse(body).title);
+});

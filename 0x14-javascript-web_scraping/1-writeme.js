@@ -6,7 +6,7 @@
 const file = process.argv[2];
 const string = process.argv[3];
 
-const fs = require('node:fs');
+const fs = require('fs');
 
 fs.writeFile(file, string, err => {
   if (err) {
