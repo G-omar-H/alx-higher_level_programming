@@ -16,6 +16,7 @@ req(url, (err, res, body) => {
   const raport = {};
   let count = 0;
   let id = 1;
+  console.log(content)
   for (const i in content) {
     if (content[i].userId === id) {
       if (content[i].completed === true) {
