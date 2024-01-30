@@ -16,16 +16,21 @@ req(url, (err, res, body) => {
   const raport = {};
   let count = 0;
   let id = 1;
-  console.log(content)
   for (const i in content) {
+    if (content[i].userId !== id) {
+      id += 1;
+      count = 0;
+    }
+
     if (content[i].userId === id) {
       if (content[i].completed === true) {
         count += 1;
         raport[content[i].userId] = count;
       }
-    } else {
-      id += 1;
-      count = 0;
+      console.log('>>', content[i].userId);
+      console.log('...', id);
+      console.log('completed=', content[i].completed);
+      console.log('count=', count);
     }
   }
   console.log(raport);
