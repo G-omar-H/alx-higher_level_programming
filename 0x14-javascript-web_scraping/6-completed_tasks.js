@@ -13,7 +13,7 @@ req(url, (err, res, body) => {
     return;
   }
   const content = JSON.parse(body);
-  const raport = {};
+  let raport = {};
   let count = 0;
   let id = 1;
   for (const i in content) {
