@@ -21,16 +21,11 @@ req(url, (err, res, body) => {
       id += 1;
       count = 0;
     }
-
     if (content[i].userId === id) {
       if (content[i].completed === true) {
         count += 1;
         raport[content[i].userId] = count;
       }
-      console.log('>>', content[i].userId);
-      console.log('...', id);
-      console.log('completed=', content[i].completed);
-      console.log('count=', count);
     }
   }
   console.log(raport);
