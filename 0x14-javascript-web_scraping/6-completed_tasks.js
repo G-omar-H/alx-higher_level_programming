@@ -13,17 +13,13 @@ req(url, (err, res, body) => {
   } else if (res.statusCode === 200) {
     const content = JSON.parse(body);
     const raport = {};
-    let count = 0;
-    let id = 1;
     for (const i in content) {
-      if (content[i].userId !== id) {
-        id += 1;
-        count = 0;
-      }
-      if (content[i].userId === id) {
-        if (content[i].completed === true) {
-          count += 1;
-          raport[content[i].userId] = count;
+      const task = content[i];
+      if (task.completed === true) {
+        if (raport[task.userId] === undefined) {
+          raport[task.userId] = 1;
+        } else {
+          raport[task.userId]++;
         }
       }
     }
