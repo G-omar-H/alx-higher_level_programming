@@ -10,23 +10,23 @@ const url = process.argv[2];
 req(url, (err, res, body) => {
   if (err) {
     console.error(err);
-    return;
-  }
-  const content = JSON.parse(body);
-  const raport = {};
-  let count = 0;
-  let id = 1;
-  for (const i in content) {
-    if (content[i].userId !== id) {
-      id += 1;
-      count = 0;
-    }
-    if (content[i].userId === id) {
-      if (content[i].completed === true) {
-        count += 1;
-        raport[content[i].userId] = count;
+  } else if (res.statusCode === 200) {
+    const content = JSON.parse(body);
+    const raport = {};
+    let count = 0;
+    let id = 1;
+    for (const i in content) {
+      if (content[i].userId !== id) {
+        id += 1;
+        count = 0;
+      }
+      if (content[i].userId === id) {
+        if (content[i].completed === true) {
+          count += 1;
+          raport[content[i].userId] = count;
+        }
       }
     }
+    console.log(raport);
   }
-  console.log(raport);
 });
