@@ -17,13 +17,13 @@ req(url, (err, res, body) => {
   res = JSON.parse(body);
   for (const i in res.characters) {
     const char = res.characters[i];
-    req(char, async (err, res, body) => {
+    req(char, (err, res, body) => {
       if (err) {
         console.error(err);
         return;
       }
-      res = await JSON.parse(body);
-      await console.log(res.name);
+      res = JSON.parse(body);
+      console.log(res.name);
     });
   }
 });

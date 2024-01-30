@@ -14,16 +14,17 @@ req(url, (err, res, body) => {
     console.error(err);
     return;
   }
-  res = JSON.parse(body);
-  for (const i in res.characters) {
-    const char = res.characters[i];
-    req(char, (err, res, body) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      res = JSON.parse(body);
-      console.log(res.name);
-    });
-  }
+  const char = JSON.parse(body).characters;
+  printchar(char, 0);
 });
+
+function printchar (characters, index) {
+  req(characters[index], (err, res, body) => {
+    if (!err) {
+      console.log(JSON.parse(body).name);
+    }
+    if (index + 1 < characters.length) {
+      printchar(characters, index + 1);
+    }
+  });
+}
