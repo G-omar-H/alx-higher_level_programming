@@ -1,1 +1,1 @@
-$('body header').css('color', '#FF0000');
+DOM = document.querySelector("header").style.color = "#FF0000"
